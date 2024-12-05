@@ -2,6 +2,13 @@
     const cdn_base = 'https://cdn.jsdelivr.net/gh/dansp89/dsp-fontawesome-picker@main';
     let iconList = null;
 
+    // Default translation object in English
+    const defaultTranslations = {
+        openPicker: 'Open Picker',
+        searchPlaceholder: 'Search icons...',
+        noIconsFound: 'No icons found',
+    };
+
     /**
      * Loads the icon list from a remote JSON source.
      * If the list has already been loaded, it returns a resolved promise.
@@ -31,10 +38,11 @@
             const link = document.createElement('link');
             link.id = 'iconpicker-style';
             link.rel = 'stylesheet';
-            link.href = cdn_base + '/style.min.css';
+            link.href = cdn_base + '/style.min.css?ts=' + new Date().getTime();
             document.head.appendChild(link);
         }
     }
+    addCSS();
 
     /**
      * Initializes the icon picker plugin on the selected element.
@@ -70,17 +78,18 @@
          * @returns {string} Translated string or the original key if not found.
          */
         function translate(key) {
-            return settings.translate[key] || key;
+            return settings.translate[key] || defaultTranslations[key] || key;
         }
 
         const instanceId = `iconpicker-${Math.random().toString(36).substr(2, 9)}`;
+        const buttonClose = !settings.closeOnSelect && !settings.closeOnOutsideClick ? '<button class="iconpicker-close-btn"><i class="fa-classic fa-regular fa-circle-xmark"></i></button>' : '';
 
         // HTML structure for the icon picker
         const iconPickerHtml = `
         <div class="iconpicker-container" id="${instanceId}">
             <button class="iconpicker-toggle-btn">${settings.defaultIcon ? `<i class="${settings.defaultIcon}"></i>` : translate("openPicker")}</button>
             <div class="iconpicker-card-fa iconpicker-dropdown">
-                <button class="iconpicker-close-btn"><i class="fa-classic fa-regular fa-circle-xmark"></i></button>
+                ${buttonClose}
                 <div class="iconpicker-card-fa-header">
                     <button class="iconpicker-card-fa-controls iconpicker-left">
                         <i class="fa-solid fa-chevron-left"></i>
@@ -106,9 +115,6 @@
 
         // Injects the HTML structure into the target element
         this.html(iconPickerHtml);
-
-        // Add the CSS file only once
-        addCSS();
 
         const $container = $(`#${instanceId}`);
         const $toggleBtn = $container.find(".iconpicker-toggle-btn");
