@@ -38,7 +38,7 @@
             const link = document.createElement('link');
             link.id = 'iconpicker-style';
             link.rel = 'stylesheet';
-            link.href = cdn_base + '/style.min.css?ts=' + new Date().getTime();
+            link.href = cdn_base + '/style.min.css';
             document.head.appendChild(link);
         }
     }
