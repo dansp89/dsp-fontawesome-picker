@@ -1,15 +1,15 @@
 .iconpicker-container {
-  width: 100px;
-  height: 200px;
-  margin: 20px auto;
-  text-align: center;
+    width: 100px;
+    z-index: 100;
+    position: absolute;
 }
 
 .iconpicker-card-fa {
   margin: 1%;
   background-color: #efefef;
   width: 200px;
-  height: 260px;
+  height: 275px;
+  box-shadow: 0px 1px 4px #b5b5b5;
 }
 
 .iconpicker-card-fa .iconpicker-card-fa-controls {
