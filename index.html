@@ -22,26 +22,15 @@
 
     <!-- Icon Picker Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/dansp89/dsp-fontawesome-picker@main/iconsPicker.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/dansp89/dsp-fontawesome-picker@main/iconsPicker.min.js?ts=v2"></script>
   </head>
   <body>
     <!-- Main Container -->
     <div class="container py-5">
+      <h1 class="text-center mb-4">Icon Picker - FontAwesome 6</h1>
+
       <div class="row justify-content-center">
-        <div class="col-lg-8 col-md-10 col-sm-12">
-          <h1 class="text-center mb-4">Icon Picker - FontAwesome 6</h1>
-
-          <!-- Icon Picker Example -->
-          <div id="example" class="mb-3"></div>
-
-          <!-- Selected Icon Display -->
-          <div class="input-group">
-            <input id="example_selected" class="form-control" readonly />
-            <span class="input-group-text"
-              ><i class="example_selected"></i
-            ></span>
-          </div>
-
+        <div class="col-12 my-5">
           <!-- GitHub Link (replace the href with your GitHub repository link) -->
           <div class="text-center mt-4">
             <a
@@ -51,6 +40,19 @@
             >
               <i class="fab fa-github me-2"></i> View on GitHub
             </a>
+          </div>
+        </div>
+        <div class="col-md-6" style="height: 350px">
+          <!-- Icon Picker Example -->
+          <div id="example" class="mb-3"></div>
+        </div>
+        <div class="col-md-6">
+          <!-- Selected Icon Display -->
+          <div class="input-group">
+            <input id="example_selected" class="form-control" readonly />
+            <span class="input-group-text"
+              ><i class="example_selected"></i
+            ></span>
           </div>
         </div>
       </div>
@@ -65,7 +67,7 @@
         $("#example").iconPicker({
           defaultIcon: "fa-classic fa-solid fa-house",
           closeOnSelect: false,
-          closeOnOutsideClick: false,
+          closeOnOutsideClick: true,
           onIconSelect: (icon) => {
             console.log("Selected icon:", icon);
             $("#example_selected").val(icon);
