@@ -1,1 +1,122 @@
+.iconpicker-container {
+  width: 100px;
+  height: 200px;
+  margin: 20px auto;
+  text-align: center;
+}
 
+.iconpicker-card-fa {
+  margin: 1%;
+  background-color: #efefef;
+  width: 100px;
+}
+
+.iconpicker-card-fa .iconpicker-card-fa-controls {
+  border: 0px none;
+  cursor: pointer;
+  font-size: 7px;
+}
+
+.iconpicker-search-box {
+  width: 50%;
+}
+
+.iconpicker-comp-fa-class {
+  width: 80%;
+}
+
+.iconpicker-comp-input-fa {
+  padding: 5px;
+  margin: 5px auto;
+  border: 1px solid #4e4e4e;
+  border-radius: 2px;
+  font-size: 6px;
+}
+
+.iconpicker-comp-input-fa:focus-visible {
+  border: 1px solid #4e4e4e;
+  outline: 0px solid rgb(255, 255, 255);
+}
+
+.iconpicker-icon-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  padding: 5px;
+  justify-content: space-between;
+  align-content: flex-start;
+}
+
+.iconpicker-icon-item {
+  text-align: center;
+  width: 15px;
+  height: 15px;
+  font-size: 10px;
+  border: 1px solid #0000002e;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.iconpicker-icon-item:hover {
+  background-color: #00ff8c5e;
+}
+
+.iconpicker-icon-item.selected {
+  background-color: #00ff8c;
+}
+
+.iconpicker-icon-item i {
+  font-size: 10px;
+  color: #333;
+}
+
+.iconpicker-icon-item p {
+  font-size: 10px;
+  word-wrap: break-word;
+  display: none;
+}
+
+.iconpicker-public-class {
+  text-align: center;
+}
+
+.iconpicker-modal-wrapper {
+  position: relative;
+}
+
+.iconpicker-modal {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  background: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+
+.iconpicker-dropdown {
+  position: relative;
+  display: none;
+}
+
+.iconpicker-toggle-btn {
+  display: inline-block;
+  padding: 10px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+}
+
+.iconpicker-close-btn {
+  border: 0px;
+  position: absolute;
+  right: -12px;
+  top: -8px;
+  background: transparent;
+  cursor: pointer;
+}
