@@ -82,16 +82,16 @@
         }
 
         const instanceId = `iconpicker-${Math.random().toString(36).substr(2, 9)}`;
-        const buttonClose = !settings.closeOnSelect && !settings.closeOnOutsideClick ? '<button class="iconpicker-close-btn"><i class="fa-classic fa-regular fa-circle-xmark"></i></button>' : '';
+        const buttonClose = !settings.closeOnSelect && !settings.closeOnOutsideClick ? '<button class="iconpicker-close-btn" type="button"><i class="fa-classic fa-regular fa-circle-xmark"></i></button>' : '';
 
         // HTML structure for the icon picker
         const iconPickerHtml = `
         <div class="iconpicker-container" id="${instanceId}">
-            <button class="iconpicker-toggle-btn">${settings.defaultIcon ? `<i class="${settings.defaultIcon}"></i>` : translate("openPicker")}</button>
+            <button class="iconpicker-toggle-btn" type="button">${settings.defaultIcon ? `<i class="${settings.defaultIcon}"></i>` : translate("openPicker")}</button>
             <div class="iconpicker-card-fa iconpicker-dropdown">
                 ${buttonClose}
                 <div class="iconpicker-card-fa-header">
-                    <button class="iconpicker-card-fa-controls iconpicker-left">
+                    <button class="iconpicker-card-fa-controls iconpicker-left" type="button">
                         <i class="fa-solid fa-chevron-left"></i>
                     </button>
                     <input
@@ -99,7 +99,7 @@
                         class="iconpicker-search-box iconpicker-comp-input-fa"
                         placeholder="${translate("searchPlaceholder")}"
                     />
-                    <button class="iconpicker-card-fa-controls iconpicker-right">
+                    <button class="iconpicker-card-fa-controls iconpicker-right" type="button">
                         <i class="fa-solid fa-chevron-right"></i>
                     </button>
                 </div>
