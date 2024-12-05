@@ -2,7 +2,6 @@
     const cdn_base = 'https://cdn.jsdelivr.net/gh/dansp89/dsp-fontawesome-picker@main';
     let iconList = null;
 
-    // Default translation object in English
     const defaultTranslations = {
         openPicker: 'Open Picker',
         searchPlaceholder: 'Search icons...',
